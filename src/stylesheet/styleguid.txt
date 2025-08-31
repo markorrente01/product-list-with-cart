@@ -1,0 +1,35 @@
+/* ==========================================================
+   Typography Guide – Red Hat Text (400–700)
+   Based on provided UI designs
+   ----------------------------------------------------------
+   Font Family: 'Red Hat Text', sans-serif;
+   Available Weights: 400 (Regular), 500 (Medium), 700 (Bold)
+   ==========================================================
+
+   1. Body / Paragraph text
+      - Font-size: 16px
+      - Weight: 400 (Regular)
+      - Line-height: ~1.5
+      - Used in: main content, descriptions, confirmation details
+
+   2. Section Titles / Sub-headings
+      - Font-size: 18px–20px
+      - Weight: 500 (Medium)
+      - Used in: form titles, card headers
+
+   3. Main Headings / Prominent Titles
+      - Font-size: 24px–28px
+      - Weight: 700 (Bold)
+      - Used in: order summary title, modal header
+
+   4. Buttons / Interactive Labels
+      - Font-size: 14px–16px
+      - Weight: 700 (Bold)
+      - Letter-spacing: slight (≈0.5px)
+      - Used in: primary CTA buttons, confirm button
+
+   5. Small Text / Secondary Info
+      - Font-size: 12px–14px
+      - Weight: 400 (Regular)
+      - Used in: disclaimers, secondary labels
+   ========================================================== */

@@ -1,0 +1,258 @@
+@use 'var' as v;
+@import 'mixin';
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap');
+/* standard resets */
+*{
+    padding: 0;
+    margin: 0;
+    font-family: inherit;
+    font-optical-sizing: inherit;
+    font-style: inherit;
+}
+*,::after,::before{
+    box-sizing: border-box;
+}
+img{
+    display: block;
+    width: 100%;
+}
+ul{
+    list-style-type: none;
+}
+/* --------------------*/
+
+html{
+    scroll-behavior: smooth;
+    font-family: "Red Hat Text", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+body{
+    min-height: 100vh;
+    background-color: v.$background-muted;
+    color: v.$text-dark;
+}
+header{
+    max-width: v.$general-width;
+    margin: auto;
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+    font-weight: v.$weight-xl;
+}
+main{
+    max-width: v.$general-width;
+    margin: auto;
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+.products-container{
+    flex: 1;
+    display: grid;
+    place-content: center;
+    // grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); for desktop view
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-rows: auto;
+    row-gap: clamp(1rem, 1vw, 1.3rem);
+    column-gap: clamp(1rem, 1.25vw, 1.5rem);
+    margin-bottom: 2rem;
+    height: fit-content;
+}
+.product-card{
+    display: flex;
+    flex-direction: column;
+}
+.product-card-img{
+    min-width: 0;
+    width: inherit;
+    margin-bottom: v.$card-img-mb;
+    position: relative;
+        img{
+            border-radius: v.$radius-s;
+        }
+}
+.product-card-cart{
+    @include imgBtn(v.$background-light, v.$gap-m);
+    @include flex( center, row );
+    // opacity: 0;
+    pointer-events: auto;
+        // &:hover{
+        //     color: v.$primary-red;
+        //     border: 1px solid v.$primary-red;
+        //     cursor: pointer;
+        // }
+    .cart{
+        width: v.$cart-icon;
+    }
+    .cart-txt{
+        font-weight: v.$weight-x;
+        display: block;
+    }
+}
+.product-increment{
+    @include imgBtn(v.$primary-red, 3.2rem);
+    @include flex( center, row );
+    border: none;
+    opacity: 0;
+    pointer-events: none;
+        .increment-value{
+            color: v.$background-light;
+        }
+         svg{
+            border: 1px solid v.$background-light;
+            @include actionBtn;
+                &:hover{
+                    background-color: v.$background-light;
+                    fill: v.$primary-red;
+                }
+        }
+}
+.product-info{
+    display: flex;
+    flex-direction: column;
+    width: v.$card-img-width;
+    .product-title{
+        font-weight: v.$weight-s;
+        font-size: v.$card-title;
+        color: v.$text-subtle;
+    }
+    .product-subtitle{
+        font-weight: v.$weight-x;
+        font-size: v.$card-sub_title;
+    }
+    .product-price{
+        font-weight: v.$weight-x;
+        font-size: v.$card-sub_title;
+        color: v.$primary-red;
+    }
+}
+
+/*----------------- full cart state --------------------*/
+.cart-container{
+    background-color: v.$background-light;
+    padding: 1.5rem 1.3rem;
+    border-radius: v.$radius-s;
+    height: fit-content;
+    width: min(100%, 25rem);
+        h2{
+            color: v.$primary-red;
+            font-weight: v.$weight-xl;
+            margin-bottom: 1rem;
+        }
+}
+.cart-content{
+    @include flex( none, column );
+    gap: v.$gap-m;
+}
+.cart-item{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border-bottom: 1px solid v.$border-transparent;
+    padding: 1.2rem 0;
+    padding-top: .8rem;
+    width: 100%;
+}
+.cart-item-info{
+    display: flex;
+    flex-direction: column;
+    gap: v.$gap-m;
+    flex: 1;
+        .cart-item-title{
+            font-weight: v.$weight-x;
+        }
+}
+.price-container{
+    display: flex;
+    gap: v.$gap-x;
+        .price-times{
+            font-weight: v.$weight-x;
+            color: v.$primary-red;
+        }
+        .item-price{
+            font-weight: v.$weight-s;
+            color: v.$text-subtle;
+        }
+        .total-price{
+            font-weight: v.$weight-x;
+        }
+}
+.delete-item{
+    border: 1px solid v.$border;
+    @include actionBtn;
+}
+.cart-item > svg{
+    border: 1px solid v.$border;
+    @include actionBtn;
+        // &:hover{
+        //     border: 1px solid v.$text-dark;
+        //     fill: v.$text-dark;
+        // }
+}
+.cart-total{
+    @include flex(space-between, row);
+    margin: v.$card-img-mb 0;
+        p{
+            font-weight: v.$margin-s;
+        }
+        span{
+            font-weight: v.$weight-xl;
+            font-size: 1.5rem;
+        }
+}
+.delivery-message{
+    width: 100%;
+    background-color: v.$background-muted;
+    font-weight: v.$weight-x;
+    padding: 1rem .5rem;
+    @include flex(center, row);
+    gap: v.$gap-m;
+    border-radius: v.$radius-s;
+    margin: v.$margin-s 0;
+    font-size: 0.938rem;
+        img{
+            width: v.$carbon-icon;
+        }
+}
+.confirm-cart-order{
+    display: block;
+    width: 100%;
+    background-color: v.$primary-red;
+    color: v.$background-light;
+    border-radius: v.$radius-m;
+    padding: v.$p-s 0;
+    font-size: 1.06rem;
+    font-weight: v.$weight-x;
+    border: none;
+    transition: background-color .3s linear;
+        // &:hover{
+        //     background-color: v.$text-dark;
+        // }
+}
+/*-------------------------------------------*/
+
+/*--------------- empty cart state -----------------*/
+.empty-container{
+    width: 100%;
+    margin-bottom: 1rem;
+}
+.empty-icon-container{
+    width: inherit;
+        img{
+            width: v.$empty-illustrator;
+            margin: auto;
+        }
+}
+.empty-message{
+    text-align: center;
+    color: v.$text-dark;
+    font-weight: v.$weight-x;
+    padding: .5rem 4rem;
+}
+/*-------------------------------------------*/
+@media screen and (prefers-reduced-motion: reduce) {
+    .confirm-cart-order, .product-card-cart, svg{
+        transition: none;
+    }
+}

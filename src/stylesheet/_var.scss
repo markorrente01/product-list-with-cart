@@ -1,0 +1,45 @@
+// Brand / Accent colors
+$primary-red: hsl(14, 86%, 42%);   // Buttons, cart confirm order, highlight
+$success-green: hsl(159, 69%, 38%); // Success message (e.g., carbon-neutral delivery)
+
+// Backgrounds
+$background-light: hsl(20, 50%, 98%); 
+$background-muted: hsl(13, 31%, 94%);
+
+// Borders & UI neutrals
+$border: hsl(14, 25%, 72%);    // Thin borders, dividers
+$border-transparent: hsla(14, 25%, 72%, 0.4);
+$text-muted: hsl(7, 20%, 60%);       // Secondary text (e.g., prices)
+$text-subtle: hsl(12, 20%, 44%);     // Labels, supporting info
+
+// Headings / Strong text
+$text-dark: hsl(14, 65%, 9%);        // Headings, primary text
+
+// spacing
+$radius-s: 0.625rem;
+$radius-m: 1.5rem;
+$radius-x: 50%;
+$p-s: 0.6rem;
+$gap-s: .25rem;
+$gap-sl: .35rem;
+$gap-m: .5rem;
+$gap-x: .75rem;
+$card-img-mb: .7rem;
+$margin: 1rem;
+$margin-s: 1.5rem;
+
+//typography
+$weight-s: 400;
+$weight-x: 500;
+$weight-xl: 700;
+
+// sizes
+$general-width: clamp(85%, 85vw, 95%);
+$card-img-width: 17rem;
+$card-title: 0.875rem;
+$card-sub_title: 1.125rem;
+$cart-icon: 1.5rem;
+$carbon-icon: 1.6rem;
+$add-to_cart: 10.5rem;
+$delete: 1.2rem;
+$empty-illustrator: 10.625rem;

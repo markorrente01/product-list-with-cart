@@ -1,0 +1,31 @@
+@use 'var' as v;
+
+@mixin flex($justify, $dir){
+    display: flex;
+    justify-content: $justify;
+    align-items: center;
+    flex-direction: $dir;
+}
+@mixin imgBtn($bg, $gap){
+    gap: $gap;
+    border: 1px solid v.$text-subtle;
+    width: v.$add-to_cart;
+    margin: auto;
+    padding: v.$p-s 0;
+    background-color: $bg;
+    border-radius: v.$radius-m;
+    position: absolute;
+    // top: 100%;
+    left: 50%;
+    bottom: -20px;
+    transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    transition: border, color .3s linear;
+}
+@mixin actionBtn{
+    padding: .2rem;
+    border-radius: 50%;
+    transition: .3s linear;
+}
