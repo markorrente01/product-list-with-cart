@@ -27,20 +27,23 @@ html {
   font-family: "Red Hat Text", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
+  overflow-x: hidden;
 }
 
 body {
   min-height: 100vh;
   background-color: hsl(13, 31%, 94%);
   color: hsl(14, 65%, 9%);
+  position: relative;
 }
 
-header {
+.body-header {
   max-width: clamp(85%, 85vw, 95%);
   margin: auto;
   margin-top: 3rem;
   margin-bottom: 1.5rem;
   font-weight: 700;
+  font-size: clamp(1.3rem, 2vw + 0.8rem, 1.1rem);
 }
 
 main {
@@ -59,9 +62,8 @@ main {
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   grid-template-rows: auto;
   row-gap: clamp(1rem, 1vw, 1.3rem);
-  -moz-column-gap: clamp(1rem, 1.25vw, 1.5rem);
-       column-gap: clamp(1rem, 1.25vw, 1.5rem);
-  margin-bottom: 2rem;
+  -moz-column-gap: clamp(1rem, 1.5vw, 1.5rem);
+       column-gap: clamp(1rem, 1.5vw, 1.5rem);
   height: -moz-fit-content;
   height: fit-content;
 }
@@ -69,6 +71,7 @@ main {
 .product-card {
   display: flex;
   flex-direction: column;
+  margin-bottom: 1rem;
 }
 
 .product-card-img {
@@ -101,7 +104,6 @@ main {
   justify-content: center;
   align-items: center;
   flex-direction: row;
-  pointer-events: auto;
 }
 .product-card-cart .cart {
   width: 1.5rem;
@@ -133,7 +135,6 @@ main {
   flex-direction: row;
   border: none;
   opacity: 0;
-  pointer-events: none;
 }
 .product-increment .increment-value {
   color: hsl(20, 50%, 98%);
@@ -144,15 +145,11 @@ main {
   border-radius: 50%;
   transition: 0.3s linear;
 }
-.product-increment svg:hover {
-  background-color: hsl(20, 50%, 98%);
-  fill: hsl(14, 86%, 42%);
-}
 
 .product-info {
   display: flex;
   flex-direction: column;
-  width: 17rem;
+  margin-top: 1.5rem;
 }
 .product-info .product-title {
   font-weight: 400;
@@ -243,11 +240,11 @@ main {
 }
 
 .cart-total {
+  margin: 0.7rem 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-direction: row;
-  margin: 0.7rem 0;
 }
 .cart-total p {
   font-weight: 1.5rem;
@@ -311,8 +308,139 @@ main {
 }
 
 /*-------------------------------------------*/
-@media screen and (prefers-reduced-motion: reduce) {
+/*--------- order confirm modal ------------*/
+.modal {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  border: 1px solid;
+  inset: 0;
+  overflow: scroll;
+  display: none;
+}
+
+.confirm-orderModal {
+  width: 70%;
+  background-color: hsl(20, 50%, 98%);
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  padding: 1.5rem;
+  padding-top: 2rem;
+  padding-bottom: 1.5rem;
+  border: none;
+  overflow: scroll;
+}
+
+.iconTick-container {
+  display: flex;
+  flex-direction: column;
+  font-size: clamp(1.3rem, 2vw + 0.8rem, 1.1rem);
+  font-weight: 700;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.iconTick-container img {
+  width: 2.5rem;
+}
+
+.cart-confirm-container {
+  background-color: hsl(13, 31%, 94%);
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border-radius: 0.625rem;
+  padding: 1.3rem;
+  padding-bottom: 0;
+}
+
+.confirm-item-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-bottom: 1px solid hsla(14, 25%, 72%, 0.4);
+}
+.confirm-item-info img {
+  width: 4rem;
+  border-radius: 0.3rem;
+}
+
+.img-and-info {
+  display: flex;
+  gap: 0.75rem;
+  flex: 1;
+  margin: 0.7rem 0;
+}
+
+.confirm-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  margin: 1.5rem 0;
+}
+.confirm-total p {
+  font-weight: 1.5rem;
+}
+.confirm-total span {
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.start-new-order {
+  display: block;
+  width: 100%;
+  background-color: hsl(14, 86%, 42%);
+  color: hsl(20, 50%, 98%);
+  border-radius: 1.5rem;
+  padding: 0.6rem 0;
+  font-size: 1.06rem;
+  font-weight: 500;
+  border: none;
+  transition: background-color 0.3s linear;
+}
+
+/*-------------------------------------------*/
+@media (hover: hover) and (pointer: fine) {
+  .product-card-cart:hover {
+    color: hsl(14, 86%, 42%);
+    border: 1px solid hsl(14, 86%, 42%);
+    cursor: pointer;
+  }
+  .product-increment > svg:hover {
+    background-color: hsl(20, 50%, 98%);
+    fill: hsl(14, 86%, 42%);
+  }
+  .confirm-cart-order:hover, .start-new-order:hover {
+    background-color: hsl(14, 65%, 9%);
+  }
+  .cart-item > svg:hover {
+    border: 1px solid hsl(14, 65%, 9%);
+    fill: hsl(14, 65%, 9%);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
   .confirm-cart-order, .product-card-cart, svg {
     transition: none;
+  }
+}
+@media screen and (min-width: 537px) {
+  .cart-container {
+    align-self: center;
+  }
+}
+@media screen and (min-width: 950px) {
+  main {
+    flex-direction: row;
+  }
+  .cart-container {
+    align-self: unset;
   }
 }/*# sourceMappingURL=style.css.map */

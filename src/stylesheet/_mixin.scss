@@ -29,3 +29,25 @@
     border-radius: 50%;
     transition: .3s linear;
 }
+@mixin orderBtn{
+    display: block;
+    width: 100%;
+    background-color: v.$primary-red;
+    color: v.$background-light;
+    border-radius: v.$radius-m;
+    padding: v.$p-s 0;
+    font-size: 1.06rem;
+    font-weight: v.$weight-x;
+    border: none;
+    transition: background-color .3s linear;
+}
+@mixin total{
+    @include flex(space-between, row);
+        p{
+            font-weight: v.$margin-s;
+        }
+        span{
+            font-weight: v.$weight-xl;
+            font-size: 1.5rem;
+        }
+}

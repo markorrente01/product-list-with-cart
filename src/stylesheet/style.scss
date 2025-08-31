@@ -26,18 +26,21 @@ html{
     font-family: "Red Hat Text", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
+    overflow-x: hidden;
 }
 body{
     min-height: 100vh;
     background-color: v.$background-muted;
     color: v.$text-dark;
+    position: relative;
 }
-header{
+.body-header{
     max-width: v.$general-width;
     margin: auto;
     margin-top: 3rem;
     margin-bottom: 1.5rem;
     font-weight: v.$weight-xl;
+    font-size: v.$header;
 }
 main{
     max-width: v.$general-width;
@@ -46,23 +49,24 @@ main{
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    // position: relative;
 }
 .products-container{
     flex: 1;
     display: grid;
     place-content: center;
-    // grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); for desktop view
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     grid-template-rows: auto;
     row-gap: clamp(1rem, 1vw, 1.3rem);
-    column-gap: clamp(1rem, 1.25vw, 1.5rem);
-    margin-bottom: 2rem;
+    column-gap: clamp(1rem, 1.5vw, 1.5rem);
     height: fit-content;
 }
 .product-card{
     display: flex;
     flex-direction: column;
+    margin-bottom: v.$margin;
 }
+
 .product-card-img{
     min-width: 0;
     width: inherit;
@@ -76,12 +80,7 @@ main{
     @include imgBtn(v.$background-light, v.$gap-m);
     @include flex( center, row );
     // opacity: 0;
-    pointer-events: auto;
-        // &:hover{
-        //     color: v.$primary-red;
-        //     border: 1px solid v.$primary-red;
-        //     cursor: pointer;
-        // }
+    // pointer-events: auto;
     .cart{
         width: v.$cart-icon;
     }
@@ -95,23 +94,19 @@ main{
     @include flex( center, row );
     border: none;
     opacity: 0;
-    pointer-events: none;
+    // pointer-events: none;
         .increment-value{
             color: v.$background-light;
         }
          svg{
             border: 1px solid v.$background-light;
             @include actionBtn;
-                &:hover{
-                    background-color: v.$background-light;
-                    fill: v.$primary-red;
-                }
         }
 }
 .product-info{
     display: flex;
     flex-direction: column;
-    width: v.$card-img-width;
+    margin-top: v.$margin-s;
     .product-title{
         font-weight: v.$weight-s;
         font-size: v.$card-title;
@@ -185,21 +180,10 @@ main{
 .cart-item > svg{
     border: 1px solid v.$border;
     @include actionBtn;
-        // &:hover{
-        //     border: 1px solid v.$text-dark;
-        //     fill: v.$text-dark;
-        // }
 }
 .cart-total{
-    @include flex(space-between, row);
     margin: v.$card-img-mb 0;
-        p{
-            font-weight: v.$margin-s;
-        }
-        span{
-            font-weight: v.$weight-xl;
-            font-size: 1.5rem;
-        }
+    @include total;
 }
 .delivery-message{
     width: 100%;
@@ -216,19 +200,7 @@ main{
         }
 }
 .confirm-cart-order{
-    display: block;
-    width: 100%;
-    background-color: v.$primary-red;
-    color: v.$background-light;
-    border-radius: v.$radius-m;
-    padding: v.$p-s 0;
-    font-size: 1.06rem;
-    font-weight: v.$weight-x;
-    border: none;
-    transition: background-color .3s linear;
-        // &:hover{
-        //     background-color: v.$text-dark;
-        // }
+    @include orderBtn;
 }
 /*-------------------------------------------*/
 
@@ -251,8 +223,116 @@ main{
     padding: .5rem 4rem;
 }
 /*-------------------------------------------*/
-@media screen and (prefers-reduced-motion: reduce) {
+
+/*--------- order confirm modal ------------*/
+.modal{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    border: 1px solid;
+    inset: 0;
+    overflow: scroll;
+    display: none;
+}
+
+.confirm-orderModal{
+    width: 70%;
+    background-color: v.$background-light;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    padding: 1.5rem;
+    padding-top: 2rem;
+    padding-bottom: 1.5rem;
+    border: none;
+    overflow: scroll;
+}
+
+.iconTick-container{
+    display: flex;
+    flex-direction: column;
+    font-size: v.$header;
+    font-weight: v.$weight-xl;
+    gap: .5rem;
+    margin-bottom: .5rem;
+        img{
+            width: 2.5rem;
+        }
+}
+.cart-confirm-container{
+    background-color: v.$background-muted;
+    margin-top: v.$margin-x;
+    margin-bottom: v.$margin-x;
+    display: flex;
+    flex-direction: column;
+    gap: v.$gap-m;
+    border-radius: v.$radius-s;
+    padding: 1.3rem;
+    padding-bottom: 0;
+}
+.confirm-item-info{
+    display: flex;
+    align-items: center;
+    gap: v.$gap-m;
+    border-bottom: 1px solid v.$border-transparent;
+        img{
+            width: 4rem;
+            border-radius: 0.3rem;
+        }
+}
+.img-and-info{
+    display: flex;
+    gap: v.$gap-x;
+    flex: 1;
+    margin: .7rem 0;
+}
+.confirm-total{
+    @include total;
+    margin: v.$margin-s 0;
+}
+.start-new-order{
+    @include orderBtn;
+}
+/*-------------------------------------------*/
+@media (hover: hover) and (pointer: fine){
+    .product-card-cart:hover{
+        color: v.$primary-red;
+        border: 1px solid v.$primary-red;
+        cursor: pointer;
+    }
+    .product-increment > svg:hover{
+        background-color: v.$background-light;
+        fill: v.$primary-red;
+    
+    }
+    .confirm-cart-order:hover, .start-new-order:hover{
+        background-color: v.$text-dark;
+    }
+    .cart-item > svg:hover{
+        border: 1px solid v.$text-dark;
+        fill: v.$text-dark;
+    }
+}
+@media (prefers-reduced-motion: reduce) {
+    html{
+        scroll-behavior: auto;
+    }
     .confirm-cart-order, .product-card-cart, svg{
         transition: none;
+    }
+}
+@media screen and (min-width: 537px) {
+    .cart-container{
+        align-self: center;
+    }
+}
+@media screen and (min-width: 950px) {
+    main{
+        flex-direction: row;
+    }
+    .cart-container{
+        align-self: unset;
     }
 }

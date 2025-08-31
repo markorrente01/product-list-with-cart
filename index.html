@@ -8,28 +8,25 @@
     <link rel="stylesheet" href="/src/stylesheet/style.css">
   </head>
   <body>
-    <header>
+    <header class="body-header">
       <h1>Desserts</h1>
     </header>
     <main>
       <section class="products-container">
-
-        <!-- container for each product -->
+     <!-- container for each product -->
         <div class="product-card">
           <!-- image and add-to-cart container -->
           <div class="product-card-img">
             <picture>
-              <source media="(min-width: 650px)" srcset="/public/images/image-waffle-tablet.jpg">
-              <source media="(min-width: 465px)" srcset="/public/images/image-waffle-mobile.jpg">
-              <img src="/public/images/image-waffle-desktop.jpg" alt="product-preview">
+              <source media="(min-width: 1024px)" srcset="/public/images/image-waffle-desktop.jpg">
+              <source media="(min-width: 768px)" srcset="/public/images/image-waffle-tablet.jpg">
+              <img src="/public/images/image-waffle-mobile.jpg" alt="Description of the image">
             </picture>
             <div class="product-card-cart">
               <div class="cart"><img src="/src/icons/icon-add-to-cart.svg" alt="cart"></div>
               <p class="cart-txt">Add to Cart</p>
             </div>
           
-
-            
             <div class="product-increment">
               <svg xmlns="http://www.w3.org/2000/svg" width="1.2rem" height="1.2rem" fill="hsl(20, 50%, 98%)" viewBox="0 0 10 2">
                 <path d="M0 .375h10v1.25H0V.375Z"/>
@@ -40,26 +37,30 @@
               </svg>
             </div>
           </div>
+          <!-- -------------------------------------------------- -->
+          <div class="product-info">
+              <p class="product-title">Waffle</p>
+              <p class="product-subtitle">Waffle with Berries</p>
+              <p class="product-price">$6.50</p>
+            </div>
 
           </div>
           <!------------------------------------->
-
+          
            <!-- container for each product -->
         <div class="product-card">
           <!-- image and add-to-cart container -->
           <div class="product-card-img">
             <picture>
-              <source media="(min-width: 650px)" srcset="/public/images/image-waffle-tablet.jpg">
-              <source media="(min-width: 465px)" srcset="/public/images/image-waffle-mobile.jpg">
-              <img src="/public/images/image-waffle-desktop.jpg" alt="product-preview">
+              <source media="(min-width: 1024px)" srcset="/public/images/image-waffle-desktop.jpg">
+              <source media="(min-width: 768px)" srcset="/public/images/image-waffle-tablet.jpg">
+              <img src="/public/images/image-waffle-mobile.jpg" alt="Description of the image">
             </picture>
             <div class="product-card-cart">
               <div class="cart"><img src="/src/icons/icon-add-to-cart.svg" alt="cart"></div>
               <p class="cart-txt">Add to Cart</p>
             </div>
           
-
-            
             <div class="product-increment">
               <svg xmlns="http://www.w3.org/2000/svg" width="1.2rem" height="1.2rem" fill="hsl(20, 50%, 98%)" viewBox="0 0 10 2">
                 <path d="M0 .375h10v1.25H0V.375Z"/>
@@ -70,66 +71,12 @@
               </svg>
             </div>
           </div>
-
-          </div>
-          <!------------------------------------->
-
-           <!-- container for each product -->
-        <div class="product-card">
-          <!-- image and add-to-cart container -->
-          <div class="product-card-img">
-            <picture>
-              <source media="(min-width: 650px)" srcset="/public/images/image-waffle-tablet.jpg">
-              <source media="(min-width: 465px)" srcset="/public/images/image-waffle-mobile.jpg">
-              <img src="/public/images/image-waffle-desktop.jpg" alt="product-preview">
-            </picture>
-            <div class="product-card-cart">
-              <div class="cart"><img src="/src/icons/icon-add-to-cart.svg" alt="cart"></div>
-              <p class="cart-txt">Add to Cart</p>
+          <!-- -------------------------------------------------- -->
+          <div class="product-info">
+              <p class="product-title">Waffle</p>
+              <p class="product-subtitle">Waffle with Berries</p>
+              <p class="product-price">$6.50</p>
             </div>
-          
-
-            
-            <div class="product-increment">
-              <svg xmlns="http://www.w3.org/2000/svg" width="1.2rem" height="1.2rem" fill="hsl(20, 50%, 98%)" viewBox="0 0 10 2">
-                <path d="M0 .375h10v1.25H0V.375Z"/>
-              </svg>
-              <p class="increment-value">1</p>
-              <svg xmlns="http://www.w3.org/2000/svg" width="1.2rem" height="1.2rem" fill="hsl(20, 50%, 98%)" viewBox="0 0 10 10">
-                <path d="M10 4.375H5.625V0h-1.25v4.375H0v1.25h4.375V10h1.25V5.625H10v-1.25Z"/>
-              </svg>
-            </div>
-          </div>
-
-          </div>
-          <!------------------------------------->
-
-           <!-- container for each product -->
-        <div class="product-card">
-          <!-- image and add-to-cart container -->
-          <div class="product-card-img">
-            <picture>
-              <source media="(min-width: 650px)" srcset="/public/images/image-waffle-tablet.jpg">
-              <source media="(min-width: 465px)" srcset="/public/images/image-waffle-mobile.jpg">
-              <img src="/public/images/image-waffle-desktop.jpg" alt="product-preview">
-            </picture>
-            <div class="product-card-cart">
-              <div class="cart"><img src="/src/icons/icon-add-to-cart.svg" alt="cart"></div>
-              <p class="cart-txt">Add to Cart</p>
-            </div>
-          
-
-            
-            <div class="product-increment">
-              <svg xmlns="http://www.w3.org/2000/svg" width="1.2rem" height="1.2rem" fill="hsl(20, 50%, 98%)" viewBox="0 0 10 2">
-                <path d="M0 .375h10v1.25H0V.375Z"/>
-              </svg>
-              <p class="increment-value">1</p>
-              <svg xmlns="http://www.w3.org/2000/svg" width="1.2rem" height="1.2rem" fill="hsl(20, 50%, 98%)" viewBox="0 0 10 10">
-                <path d="M10 4.375H5.625V0h-1.25v4.375H0v1.25h4.375V10h1.25V5.625H10v-1.25Z"/>
-              </svg>
-            </div>
-          </div>
 
           </div>
           <!------------------------------------->
@@ -148,8 +95,6 @@
               <p class="cart-txt">Add to Cart</p>
             </div>
           
-
-            
             <div class="product-increment">
               <svg xmlns="http://www.w3.org/2000/svg" width="1.2rem" height="1.2rem" fill="hsl(20, 50%, 98%)" viewBox="0 0 10 2">
                 <path d="M0 .375h10v1.25H0V.375Z"/>
@@ -160,9 +105,220 @@
               </svg>
             </div>
           </div>
+          <!-- -------------------------------------------------- -->
+          <div class="product-info">
+              <p class="product-title">Waffle</p>
+              <p class="product-subtitle">Waffle with Berries</p>
+              <p class="product-price">$6.50</p>
+            </div>
 
           </div>
           <!------------------------------------->
+
+           <!-- container for each product -->
+        <div class="product-card">
+          <!-- image and add-to-cart container -->
+          <div class="product-card-img">
+            <picture>
+              <source media="(min-width: 1024px)" srcset="/public/images/image-waffle-desktop.jpg">
+              <source media="(min-width: 768px)" srcset="/public/images/image-waffle-tablet.jpg">
+              <img src="/public/images/image-waffle-mobile.jpg" alt="Description of the image">
+            </picture>
+            <div class="product-card-cart">
+              <div class="cart"><img src="/src/icons/icon-add-to-cart.svg" alt="cart"></div>
+              <p class="cart-txt">Add to Cart</p>
+            </div>
+          
+            <div class="product-increment">
+              <svg xmlns="http://www.w3.org/2000/svg" width="1.2rem" height="1.2rem" fill="hsl(20, 50%, 98%)" viewBox="0 0 10 2">
+                <path d="M0 .375h10v1.25H0V.375Z"/>
+              </svg>
+              <p class="increment-value">1</p>
+              <svg xmlns="http://www.w3.org/2000/svg" width="1.2rem" height="1.2rem" fill="hsl(20, 50%, 98%)" viewBox="0 0 10 10">
+                <path d="M10 4.375H5.625V0h-1.25v4.375H0v1.25h4.375V10h1.25V5.625H10v-1.25Z"/>
+              </svg>
+            </div>
+          </div>
+          <!-- -------------------------------------------------- -->
+          <div class="product-info">
+              <p class="product-title">Waffle</p>
+              <p class="product-subtitle">Waffle with Berries</p>
+              <p class="product-price">$6.50</p>
+            </div>
+
+          </div>
+          <!------------------------------------->
+
+           <!-- container for each product -->
+        <div class="product-card">
+          <!-- image and add-to-cart container -->
+          <div class="product-card-img">
+            <picture>
+              <source media="(min-width: 1024px)" srcset="/public/images/image-waffle-desktop.jpg">
+              <source media="(min-width: 768px)" srcset="/public/images/image-waffle-tablet.jpg">
+              <img src="/public/images/image-waffle-mobile.jpg" alt="Description of the image">
+            </picture>
+            <div class="product-card-cart">
+              <div class="cart"><img src="/src/icons/icon-add-to-cart.svg" alt="cart"></div>
+              <p class="cart-txt">Add to Cart</p>
+            </div>
+          
+            <div class="product-increment">
+              <svg xmlns="http://www.w3.org/2000/svg" width="1.2rem" height="1.2rem" fill="hsl(20, 50%, 98%)" viewBox="0 0 10 2">
+                <path d="M0 .375h10v1.25H0V.375Z"/>
+              </svg>
+              <p class="increment-value">1</p>
+              <svg xmlns="http://www.w3.org/2000/svg" width="1.2rem" height="1.2rem" fill="hsl(20, 50%, 98%)" viewBox="0 0 10 10">
+                <path d="M10 4.375H5.625V0h-1.25v4.375H0v1.25h4.375V10h1.25V5.625H10v-1.25Z"/>
+              </svg>
+            </div>
+          </div>
+          <!-- -------------------------------------------------- -->
+          <div class="product-info">
+              <p class="product-title">Waffle</p>
+              <p class="product-subtitle">Waffle with Berries</p>
+              <p class="product-price">$6.50</p>
+            </div>
+
+          </div>
+          <!------------------------------------->
+
+           <!-- container for each product -->
+        <div class="product-card">
+          <!-- image and add-to-cart container -->
+          <div class="product-card-img">
+            <picture>
+              <source media="(min-width: 1024px)" srcset="/public/images/image-waffle-desktop.jpg">
+              <source media="(min-width: 768px)" srcset="/public/images/image-waffle-tablet.jpg">
+              <img src="/public/images/image-waffle-mobile.jpg" alt="Description of the image">
+            </picture>
+            <div class="product-card-cart">
+              <div class="cart"><img src="/src/icons/icon-add-to-cart.svg" alt="cart"></div>
+              <p class="cart-txt">Add to Cart</p>
+            </div>
+          
+            <div class="product-increment">
+              <svg xmlns="http://www.w3.org/2000/svg" width="1.2rem" height="1.2rem" fill="hsl(20, 50%, 98%)" viewBox="0 0 10 2">
+                <path d="M0 .375h10v1.25H0V.375Z"/>
+              </svg>
+              <p class="increment-value">1</p>
+              <svg xmlns="http://www.w3.org/2000/svg" width="1.2rem" height="1.2rem" fill="hsl(20, 50%, 98%)" viewBox="0 0 10 10">
+                <path d="M10 4.375H5.625V0h-1.25v4.375H0v1.25h4.375V10h1.25V5.625H10v-1.25Z"/>
+              </svg>
+            </div>
+          </div>
+          <!-- -------------------------------------------------- -->
+          <div class="product-info">
+              <p class="product-title">Waffle</p>
+              <p class="product-subtitle">Waffle with Berries</p>
+              <p class="product-price">$6.50</p>
+            </div>
+
+          </div>
+          <!------------------------------------->
+
+           <!-- container for each product -->
+        <div class="product-card">
+          <!-- image and add-to-cart container -->
+          <div class="product-card-img">
+            <picture>
+              <source media="(min-width: 1024px)" srcset="/public/images/image-waffle-desktop.jpg">
+              <source media="(min-width: 768px)" srcset="/public/images/image-waffle-tablet.jpg">
+              <img src="/public/images/image-waffle-mobile.jpg" alt="Description of the image">
+            </picture>
+            <div class="product-card-cart">
+              <div class="cart"><img src="/src/icons/icon-add-to-cart.svg" alt="cart"></div>
+              <p class="cart-txt">Add to Cart</p>
+            </div>
+          
+            <div class="product-increment">
+              <svg xmlns="http://www.w3.org/2000/svg" width="1.2rem" height="1.2rem" fill="hsl(20, 50%, 98%)" viewBox="0 0 10 2">
+                <path d="M0 .375h10v1.25H0V.375Z"/>
+              </svg>
+              <p class="increment-value">1</p>
+              <svg xmlns="http://www.w3.org/2000/svg" width="1.2rem" height="1.2rem" fill="hsl(20, 50%, 98%)" viewBox="0 0 10 10">
+                <path d="M10 4.375H5.625V0h-1.25v4.375H0v1.25h4.375V10h1.25V5.625H10v-1.25Z"/>
+              </svg>
+            </div>
+          </div>
+          <!-- -------------------------------------------------- -->
+          <div class="product-info">
+              <p class="product-title">Waffle</p>
+              <p class="product-subtitle">Waffle with Berries</p>
+              <p class="product-price">$6.50</p>
+            </div>
+
+          </div>
+          <!------------------------------------->
+
+           <!-- container for each product -->
+        <div class="product-card">
+          <!-- image and add-to-cart container -->
+          <div class="product-card-img">
+            <picture>
+              <source media="(min-width: 1024px)" srcset="/public/images/image-waffle-desktop.jpg">
+              <source media="(min-width: 768px)" srcset="/public/images/image-waffle-tablet.jpg">
+              <img src="/public/images/image-waffle-mobile.jpg" alt="Description of the image">
+            </picture>
+            <div class="product-card-cart">
+              <div class="cart"><img src="/src/icons/icon-add-to-cart.svg" alt="cart"></div>
+              <p class="cart-txt">Add to Cart</p>
+            </div>
+          
+            <div class="product-increment">
+              <svg xmlns="http://www.w3.org/2000/svg" width="1.2rem" height="1.2rem" fill="hsl(20, 50%, 98%)" viewBox="0 0 10 2">
+                <path d="M0 .375h10v1.25H0V.375Z"/>
+              </svg>
+              <p class="increment-value">1</p>
+              <svg xmlns="http://www.w3.org/2000/svg" width="1.2rem" height="1.2rem" fill="hsl(20, 50%, 98%)" viewBox="0 0 10 10">
+                <path d="M10 4.375H5.625V0h-1.25v4.375H0v1.25h4.375V10h1.25V5.625H10v-1.25Z"/>
+              </svg>
+            </div>
+          </div>
+          <!-- -------------------------------------------------- -->
+          <div class="product-info">
+              <p class="product-title">Waffle</p>
+              <p class="product-subtitle">Waffle with Berries</p>
+              <p class="product-price">$6.50</p>
+            </div>
+
+          </div>
+          <!------------------------------------->
+
+           <!-- container for each product -->
+        <div class="product-card">
+          <!-- image and add-to-cart container -->
+          <div class="product-card-img">
+            <picture>
+              <source media="(min-width: 1024px)" srcset="/public/images/image-waffle-desktop.jpg">
+              <source media="(min-width: 768px)" srcset="/public/images/image-waffle-tablet.jpg">
+              <img src="/public/images/image-waffle-mobile.jpg" alt="Description of the image">
+            </picture>
+            <div class="product-card-cart">
+              <div class="cart"><img src="/src/icons/icon-add-to-cart.svg" alt="cart"></div>
+              <p class="cart-txt">Add to Cart</p>
+            </div>
+          
+            <div class="product-increment">
+              <svg xmlns="http://www.w3.org/2000/svg" width="1.2rem" height="1.2rem" fill="hsl(20, 50%, 98%)" viewBox="0 0 10 2">
+                <path d="M0 .375h10v1.25H0V.375Z"/>
+              </svg>
+              <p class="increment-value">1</p>
+              <svg xmlns="http://www.w3.org/2000/svg" width="1.2rem" height="1.2rem" fill="hsl(20, 50%, 98%)" viewBox="0 0 10 10">
+                <path d="M10 4.375H5.625V0h-1.25v4.375H0v1.25h4.375V10h1.25V5.625H10v-1.25Z"/>
+              </svg>
+            </div>
+          </div>
+          <!-- -------------------------------------------------- -->
+          <div class="product-info">
+              <p class="product-title">Waffle</p>
+              <p class="product-subtitle">Waffle with Berries</p>
+              <p class="product-price">$6.50</p>
+            </div>
+
+          </div>
+          <!------------------------------------->
+
       </section>
 
       <section class="cart-container">
@@ -239,6 +395,73 @@
 
       </section>
     </main>
+    <div class="modal">
+      <div class="confirm-orderModal" open>
+      <header class="modal-header">
+        <div class="iconTick-container">
+          <img src="/src/icons/icon-order-confirmed.svg" alt="order confirmed">
+          <h1 class="modal-title">Order Confirmed</h1>
+        </div>
+        <p class="modal-comp">We hope you enjoy your food!</p>
+      </header>
+
+      <section class="cart-confirm-container">
+        
+        <div class="confirm-item-info">
+          <div class="img-and-info">
+            <img src="/public/images/image-tiramisu-thumbnail.jpg" alt="Tiramisu">
+           <div class="cart-item-info">
+              <p class="cart-item-title">Classic Tiramisu</p>
+              <div class="price-container">
+                <p class="price-times">2x</p>
+                <p class="item-price">@ $5.50</p>
+              </div>
+            </div>
+          </div>
+            <p class="confirm-subtotal">$5.50</p>
+        </div>
+
+        <div class="confirm-item-info">
+          <div class="img-and-info">
+            <img src="/public/images/image-tiramisu-thumbnail.jpg" alt="Tiramisu">
+           <div class="cart-item-info">
+              <p class="cart-item-title">Classic Tiramisu</p>
+              <div class="price-container">
+                <p class="price-times">2x</p>
+                <p class="item-price">@ $5.50</p>
+              </div>
+            </div>
+          </div>
+            <p class="confirm-subtotal">$5.50</p>
+        </div>
+
+        <div class="confirm-item-info">
+          <div class="img-and-info">
+            <div class="confirm-img">
+            <img src="/public/images/image-tiramisu-thumbnail.jpg" alt="Tiramisu">
+            </div>
+           <div class="cart-item-info">
+              <p class="cart-item-title">Classic Tiramisu</p>
+              <div class="price-container">
+                <p class="price-times">2x</p>
+                <p class="item-price">@ $5.50</p>
+              </div>
+            </div>
+          </div>
+            <p class="confirm-subtotal">$5.50</p>
+        </div>
+
+        <div class="confirm-total">
+            <p>Order Total</p>
+            <span>$46.50</span>
+          </div>
+      </section>
+
+      <button class="start-new-order" id="startNewOrder">Start New Order</button>
+
+    </div>
+    </div>
+    
   <script type="module" src="/src/main.js"></script>
   </body>
 </html>

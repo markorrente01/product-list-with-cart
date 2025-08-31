@@ -24,9 +24,11 @@ $gap-s: .25rem;
 $gap-sl: .35rem;
 $gap-m: .5rem;
 $gap-x: .75rem;
+$gap-xl: 1rem;
 $card-img-mb: .7rem;
 $margin: 1rem;
 $margin-s: 1.5rem;
+$margin-x: 2rem;
 
 //typography
 $weight-s: 400;
@@ -43,3 +45,6 @@ $carbon-icon: 1.6rem;
 $add-to_cart: 10.5rem;
 $delete: 1.2rem;
 $empty-illustrator: 10.625rem;
+
+// font size 
+$header: clamp(1.3rem, 2vw + 0.8rem, 1.1rem);
