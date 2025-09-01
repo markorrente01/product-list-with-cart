@@ -9,7 +9,7 @@
     font-optical-sizing: inherit;
     font-style: inherit;
 }
-*,::after,::before{
+*,*::after,*::before{
     box-sizing: border-box;
 }
 img{
@@ -37,7 +37,7 @@ body{
 .body-header{
     max-width: v.$general-width;
     margin: auto;
-    margin-top: 3rem;
+    margin-top: 1.5rem;
     margin-bottom: 1.5rem;
     font-weight: v.$weight-xl;
     font-size: v.$header;
@@ -94,7 +94,7 @@ main{
     @include flex( center, row );
     border: none;
     opacity: 0;
-    // pointer-events: none;
+    pointer-events: none;
         .increment-value{
             color: v.$background-light;
         }
@@ -226,30 +226,46 @@ main{
 
 /*--------- order confirm modal ------------*/
 .modal{
-    position: fixed;
-    width: 100%;
-    height: 100%;
     display: flex;
     align-items: end;
-    justify-content: center;
     border: 1px solid;
     inset: 0;
-    overflow: scroll;
-    display: none;
+    position: fixed;
+    opacity: 0;
+    pointer-events: none;
+    width: 100%;
+    min-height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    will-change: opacity;
+    transition: opacity .2s linear;
+    overflow-y: hidden;
 }
-
+.modal.is-open{
+    opacity: 1;
+    pointer-events: auto;
+}
+.modal.is-open .confirm-orderModal{
+    transform: translateY(0);
+    pointer-events: auto;
+}
 .confirm-orderModal{
-    width: 70%;
+    width: 100%;
+    height: 85vh;
     background-color: v.$background-light;
     border-top-left-radius: 1rem;
     border-top-right-radius: 1rem;
     padding: 1.5rem;
     padding-top: 2rem;
     padding-bottom: 1.5rem;
-    border: none;
     overflow: scroll;
+    pointer-events: none;
+    transform: translateY(100%);
+    transition: transform .3s linear;
+    will-change: transform;
+        @media screen and (min-height: 926px) {
+            height: 65vh;
+    }
 }
-
 .iconTick-container{
     display: flex;
     flex-direction: column;
@@ -263,8 +279,8 @@ main{
 }
 .cart-confirm-container{
     background-color: v.$background-muted;
-    margin-top: v.$margin-x;
-    margin-bottom: v.$margin-x;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
     display: flex;
     flex-direction: column;
     gap: v.$gap-m;
@@ -278,7 +294,7 @@ main{
     gap: v.$gap-m;
     border-bottom: 1px solid v.$border-transparent;
         img{
-            width: 4rem;
+            width: 3rem;
             border-radius: 0.3rem;
         }
 }
@@ -286,11 +302,11 @@ main{
     display: flex;
     gap: v.$gap-x;
     flex: 1;
-    margin: .7rem 0;
+    margin: .8rem 0;
 }
 .confirm-total{
     @include total;
-    margin: v.$margin-s 0;
+    margin: 1rem 0;
 }
 .start-new-order{
     @include orderBtn;
@@ -305,27 +321,61 @@ main{
     .product-increment > svg:hover{
         background-color: v.$background-light;
         fill: v.$primary-red;
-    
+        cursor: pointer;
     }
-    .confirm-cart-order:hover, .start-new-order:hover{
+    .confirm-cart-order:hover{
         background-color: v.$text-dark;
+        cursor: pointer;
+    }
+    .start-new-order:hover{
+        background-color: v.$text-dark;
+        cursor: pointer;
     }
     .cart-item > svg:hover{
         border: 1px solid v.$text-dark;
         fill: v.$text-dark;
+        cursor: pointer;
     }
 }
 @media (prefers-reduced-motion: reduce) {
     html{
         scroll-behavior: auto;
     }
-    .confirm-cart-order, .product-card-cart, svg{
+    .confirm-cart-order, .product-card-cart, svg, .modal, .confirm-orderModal{
         transition: none;
     }
 }
 @media screen and (min-width: 537px) {
     .cart-container{
         align-self: center;
+    }
+}
+@media screen and (min-width: 768px) {
+    .modal{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid;
+        position: fixed;
+        inset: 0;
+        width: 100%;
+        min-height: 100vh;
+        background: rgba(0, 0, 0, 0.5);
+        overflow-y: hidden;
+    }
+    .confirm-orderModal{
+        width: 31.25rem;
+        height: fit-content;
+        border-radius: 1rem;
+        overflow: unset;
+        transform: translateY(-30px);
+        opacity: 0;
+        will-change: opacity, transform;
+        transition: opacity, transform .3s linear;
+    }
+    .modal.is-open .confirm-orderModal{
+        transform: translateY(0);
+        opacity: 1;
     }
 }
 @media screen and (min-width: 950px) {
