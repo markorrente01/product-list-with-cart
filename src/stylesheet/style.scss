@@ -79,8 +79,6 @@ main{
 .product-card-cart{
     @include imgBtn(v.$background-light, v.$gap-m);
     @include flex( center, row );
-    // opacity: 0;
-    // pointer-events: auto;
     .cart{
         width: v.$cart-icon;
     }
@@ -88,6 +86,14 @@ main{
         font-weight: v.$weight-x;
         display: block;
     }
+}
+.product-card-cart.add-cart-inactive{
+    opacity: 0;
+    pointer-events: none;
+}
+.product-increment.increment-active{
+    opacity: 1;
+    pointer-events: auto;
 }
 .product-increment{
     @include imgBtn(v.$primary-red, 3.2rem);
@@ -220,7 +226,7 @@ main{
     text-align: center;
     color: v.$text-dark;
     font-weight: v.$weight-x;
-    padding: .5rem 4rem;
+    padding: .5rem 0;
 }
 /*-------------------------------------------*/
 

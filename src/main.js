@@ -1,6 +1,6 @@
-document.getElementById('confirmOrder').addEventListener('click', ()=>{
-    document.querySelector('.modal').classList.add('is-open')
-})
-document.getElementById('startNewOrder').addEventListener('click', ()=>{
-    document.querySelector('.modal').classList.remove('is-open')
-})
+import { CartManager } from "./modules/Cart.js";
+import { RenderUi } from "./modules/Ui.js";
+import { getData } from "./modules/Data.js";
+const data = await getData();
+const ui = new RenderUi(document.querySelector('.products-container'))
+ui.render();

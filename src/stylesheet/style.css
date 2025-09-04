@@ -113,6 +113,16 @@ main {
   display: block;
 }
 
+.product-card-cart.add-cart-inactive {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.product-increment.increment-active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
 .product-increment {
   gap: 3.2rem;
   border: 1px solid hsl(12, 20%, 44%);
@@ -305,7 +315,7 @@ main {
   text-align: center;
   color: hsl(14, 65%, 9%);
   font-weight: 500;
-  padding: 0.5rem 4rem;
+  padding: 0.5rem 0;
 }
 
 /*-------------------------------------------*/
