@@ -1,15 +1,18 @@
 import { getData } from "./Data.js";
 import { CartManager } from "./Cart.js";
 const data = await getData();
-const cartHandler = new CartManager();
+const cartHandler = new CartManager('.product-card');
 export class RenderUi {
     constructor(container) {
         this.productsContainer = container;
         this.cartManager = cartHandler;
-    }
-    createCard(product) {
+    };
+    createCard(product, id) {
         const productCard = document.createElement('div');
         productCard.className = 'product-card';
+        productCard.dataset.name = product.name;
+        productCard.dataset.price = product.price;
+        productCard.dataset.id = id;
             productCard.innerHTML = `
             <div class="product-card-img">
                     <picture>
@@ -19,7 +22,7 @@ export class RenderUi {
                     </picture>
 
                     <div class="product-card-cart">
-                    <div class="cart"><img src="/src/icons/icon-add-to-cart.svg" alt="cart-icon"></div>
+                    <div class="cart"><img src="/icons/icon-add-to-cart.svg" alt="cart-icon"></div>
                     <p class="cart-txt">Add to Cart</p>
                     </div>
                 
@@ -41,6 +44,13 @@ export class RenderUi {
                     <p class="product-price">$${product.price.toFixed(2)}</p>
                     </div>
         `
+        productCard.dataset.increment = productCard.querySelector('.increment-value').textContent;
+        this.cartManager.updateElementStateFromCart(
+            product.name, 
+            productCard.querySelector('.product-card-cart'),
+            productCard.querySelector('.product-increment'),
+            productCard.querySelector('.increment-value')
+        );
         this.cartManager.addToCart
         (
         productCard.querySelector('.product-card-cart'), 
@@ -51,12 +61,11 @@ export class RenderUi {
             productCard.querySelector('.increment-value')
         );
         return productCard;
-    }
+    };
     render() {
         this.productsContainer.innerHTML = '';
-        data.forEach(product => {
-            this.productsContainer.appendChild(this.createCard(product))
+        data.forEach((product, index) => {
+            this.productsContainer.appendChild(this.createCard(product, index))
         });
-    }
-    
+    };
 }

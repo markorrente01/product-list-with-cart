@@ -5,5 +5,5 @@ export class Storage {
     }
     saveToStorage(data) {
         localStorage.setItem('cart', JSON.stringify(data));
-    } 
+    }
 }
