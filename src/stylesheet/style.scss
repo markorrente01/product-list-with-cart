@@ -145,6 +145,7 @@ main{
 .cart-content{
     @include flex( none, column );
     gap: v.$gap-m;
+    // border: 1px solid;
 }
 .cart-item{
     display: flex;
